@@ -106,3 +106,9 @@ Serve ad:
 POST http://localhost:3001/serve-ad
 { "country": "FR" }
 ```
+
+## Troubleshooting
+
+- If the frontend cannot reach the API, verify the backend is running on `http://localhost:3001`.
+- Use `GET /health` to quickly check the backend status.
+- If MongoDB connection fails, ensure the MongoDB service is running locally.
