@@ -68,8 +68,38 @@ UI: `http://localhost:3000`
 - Use a queue / event stream for impressions processing and aggregation.
 - Rate limiting + structured logging + monitoring.
 
+## Production notes
+
+- Add timeouts and connection pooling.
+- Add request tracing (request id), structured logs, dashboards/alerts.
+- Use separate read models / pre-aggregations for stats.
+
 ## Impression capping
 
 - Store counters per campaign / country / user / time window.
 - Use Redis for fast atomic counters and TTL-based windows.
 - Persist aggregated counters asynchronously to MongoDB.
+
+## Quick API examples
+
+Create campaign:
+
+```
+POST http://localhost:3001/campaigns
+{
+  "name": "Summer Campaign",
+  "advertiser": "Nike",
+  "startDate": "2025-06-01",
+  "endDate": "2025-07-01",
+  "budget": 10000,
+  "targetCountries": ["FR","ES"],
+  "status": "active"
+}
+```
+
+Serve ad:
+
+```
+POST http://localhost:3001/serve-ad
+{ "country": "FR" }
+```
