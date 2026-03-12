@@ -8,6 +8,7 @@
 ## 0:30 - 1:45 Backend overview
 
 - Show `backend/.env.example` and explain local MongoDB.
+- Mention `GET /health` to quickly verify the API is running.
 - Open `backend/src/campaigns/`:
   - `campaign.schema.ts` (model: name, advertiser, dates, budget, impressionsServed, targetCountries, status)
   - DTOs + validation (`create-campaign.dto.ts`, `serve-ad.dto.ts`)

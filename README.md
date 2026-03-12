@@ -14,9 +14,11 @@ Mini fullstack system to manage and serve video advertising campaigns.
 - Node.js
 - MongoDB local
 
+MongoDB database name used: `adtech_exercise`.
+
 ### Setup
 
-Create `backend/.env`:
+Create `backend/.env` (you can copy from `backend/.env.example`):
 
 ```
 MONGODB_URI=mongodb://127.0.0.1:27017/adtech_exercise
@@ -39,12 +41,13 @@ API base URL: `http://localhost:3001`
 - `GET /campaigns?status=&advertiser=&country=`
 - `POST /serve-ad` body: `{ "country": "FR" }`
 - `GET /stats`
+- `GET /health`
 
 Assumption (MVP): **1 impression consumes 1 unit of budget**.
 
 ## Frontend (Next.js)
 
-Create `frontend/.env.local`:
+Create `frontend/.env.local` (you can copy from `frontend/.env.example`):
 
 ```
 NEXT_PUBLIC_API_URL=http://localhost:3001
